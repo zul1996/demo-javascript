@@ -6,9 +6,9 @@ const salaryPerDay = 200_000; // IDR / Rp / Rupiah
 const totalSalary = salaryPerDay * employeeActiveDays;
 
 if (employeeActiveDays < 10) {
-  console.log(
-    `You don't get salary because you only work for ${employeeActiveDays} day(s)`
-  );
+    console.log(
+        `You don't get salary because you only work for ${employeeActiveDays} day(s)`
+    );
 } else if (employeeActiveDays >= 10) {
-  console.log("You get a salary of Rp " + totalSalary);
+    console.log("You get a salary of Rp " + totalSalary);
 }
