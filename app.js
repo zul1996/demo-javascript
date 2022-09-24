@@ -93,9 +93,9 @@ function isPayment() {
     employeePay = employeeActiveDays
 
     if (employeePay < 10) {
-        console.log('anda tidak dapat gaji')
+        console.log('you dont get salary')
     } else if (employeePay > 10) {
-        console.log('dapat gaji' + salaryCalculation())
+        console.log('Salary ' + salaryCalculation())
     }
     return employeePay
 
