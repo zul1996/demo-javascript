@@ -35,8 +35,8 @@ savingsMoneyFormElement.addEventListener("submit", (Event) => {
     totalSavingsMoneyResult.innerHTML = `Rp ${resultMoneySavings}`;
   } catch (error) {
     console.log(error);
-    errorMessageElement.innerText = "Money Must be over Rp 100.000";
-    totalSavingsTaxMoneyResult.innerHTML = "";
-    totalSavingsMoneyResult.innerHTML = "";
+    errorMessageElement.innerText = "";
+    totalSavingsTaxMoneyResult.innerHTML = "Money Must be over Rp 100.000";
+    totalSavingsMoneyResult.innerHTML = "Money Must be over Rp 100.000";
   }
 });

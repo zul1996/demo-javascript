@@ -6,7 +6,7 @@ export function taxCalculation(moneySavings) {
 }
 
 export function totalCalculation(moneySavings) {
-  let tax = taxCalculation();
-  let income = moneySavings + tax;
+  let tax = taxCalculation(moneySavings);
+  let income = moneySavings * 12 + tax;
   return income.toFixed(2);
 }
