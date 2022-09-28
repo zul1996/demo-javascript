@@ -1,10 +1,86 @@
+:root {
+  /* color */
+  --black-color: #111111;
+  --white-color: #fff;
+
+  /* Font and typography */
+  --body-font:font-family: 'Poppins', sans-serif;
+
+  /* font */
+  --big-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: 0.938rem;
+  --smal-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /* font weight */
+  /* Font weight */
+  --font-medium: 500;
+  --font-semi-bold: 600;
+}
+
+/*========================== BASE ==========================*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-size: 3rem;
+  margin: 0 ;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+img{
+  max-height: 100%;
+  height: auto;
+}
+
+/*========================== Start CSS ==========================*/
+
+.main{
+  background-color: var(--black-color);
   height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #111111;
-  color: white;
+  
+}
+
+.main h1{
+  font-size: var(--big-font-size);
+}
+
+.main-container{
+  display: flex;
+  flex-direction: column;
+  border: white solid 1px;
+  border-radius: 1rem;
+  padding: 20px;
+  background-color:var(--white-color);
+  gap: 1rem;
+
+}
+
+.container-result{
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
 }

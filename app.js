@@ -1,28 +1,42 @@
+import { taxCalculation, totalCalculation } from "./modules/calculate.js";
 
-// LETS MAKE SAVING INTEREST MONEY
+const savingsMoneyFormElement = document.getElementById("savings-area-form");
+const savingsMoneyInputElement = document.getElementById("savings-money");
+const totalSavingsTaxMoneyResult = document.getElementById(
+  "totalsavingstax-area-result"
+);
+const totalSavingsMoneyResult = document.getElementById(
+  "totalsavings-area-result"
+);
+const errorMessageElement = document.getElementById("error-message");
 
-let money = 1_800_000
-let isAnswer = "";
+savingsMoneyFormElement.addEventListener("submit", (Event) => {
+  try {
+    event.preventDefault();
 
-function taxCalculation() {
-    let taxPercentage = 3 / 100
-    let incomeTax = money * taxPercentage * 30 / 365
-    return incomeTax
-}
+    const moneySavings = savingsMoneyInputElement.valueAsNumber;
 
-function earnCalculationPerMonth() {
-    for (let month = 1; month <= 12; month++) {
-        tax = 0
-        if (month > 1) {
-            tax = money + taxCalculation()
-        }
-
-        isAnswer += ` Calender : ${month} month  \n Saving money ${money.toFixed(2)} \n earn tax ${taxCalculation().toFixed(2)} \n ---------- \n `
-        money = money + taxCalculation()
-        console.log(isAnswer);
+    if (moneySavings <= 100_000) {
+      throw new Error("Money Must be over Rp 100.000");
     }
-}
+    if (!moneySavings) {
+      throw new Error("Value must exist");
+    }
 
+    const resultMoneyTaxSavings = taxCalculation(moneySavings);
+    const resultMoneySavings = totalCalculation(moneySavings);
 
-console.log(earnCalculationPerMonth());
+    if (!resultMoneySavings || !resultMoneyTaxSavings) {
+      throw new Error("Result is undefined");
+    }
 
+    errorMessageElement.innerText = "";
+    totalSavingsTaxMoneyResult.innerHTML = `Rp ${resultMoneyTaxSavings}`;
+    totalSavingsMoneyResult.innerHTML = `Rp ${resultMoneySavings}`;
+  } catch (error) {
+    console.log(error);
+    errorMessageElement.innerText = "Money Must be over Rp 100.000";
+    totalSavingsTaxMoneyResult.innerHTML = "";
+    totalSavingsMoneyResult.innerHTML = "";
+  }
+});

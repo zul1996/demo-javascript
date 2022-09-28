@@ -4,12 +4,38 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Demo JavaScript</title>
+    <title>Interest saving bank</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>LEARN JAVASCRIPT</h1>
-    <h1>press f12 on keyboard</h1>
-    <script src="app.js"></script>
+    <section class="main">
+      <div class="main-container">
+        <h1>Bank Interest Benefit a Years</h1>
+        <div class="container-form">
+          <form id="savings-area-form" class="savings-form">
+            <label for="savings-money">Input saving per month :</label>
+            <input
+              type="number"
+              step="any"
+              name="savings-money"
+              id="savings-money"
+            />
+            <input type="submit" value="Calculate" />
+          </form>
+          <div class="container-result">
+            <p>Tax benefit per years :</p>
+            <p id="totalsavingstax-area-result"></p>
+            <p id="error-message"></p>
+          </div>
+
+          <div class="container-result">
+            <p>Tax benefit per years :</p>
+            <p id="totalsavings-area-result"></p>
+            <p id="error-message"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="module" src="app.js"></script>
   </body>
 </html>
